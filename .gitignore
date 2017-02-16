@@ -44,3 +44,5 @@ gps-sdr-sim-lut
 Debug
 Release
 .vs
+
+!vs-tools.exe
