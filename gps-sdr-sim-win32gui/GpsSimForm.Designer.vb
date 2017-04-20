@@ -31,33 +31,47 @@ Partial Class GpsSimForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbDuration = New System.Windows.Forms.ComboBox()
         Me.tpStaticMode = New System.Windows.Forms.TabPage()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.tbLat = New System.Windows.Forms.TextBox()
-        Me.tbLon = New System.Windows.Forms.TextBox()
-        Me.tbHgt = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.tbHgt = New System.Windows.Forms.TextBox()
+        Me.tbLon = New System.Windows.Forms.TextBox()
+        Me.tbLat = New System.Windows.Forms.TextBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.cbOutputFile = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.tbHackrfIFGain = New System.Windows.Forms.TextBox()
+        Me.tbHackrfRate = New System.Windows.Forms.TextBox()
+        Me.tbHackrfFreq = New System.Windows.Forms.TextBox()
+        Me.bTransmit = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.tbHackrfAmp = New System.Windows.Forms.TextBox()
+        Me.pbTransmit = New System.Windows.Forms.ProgressBar()
         Me.tpStaticMode.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'bRun
         '
         Me.bRun.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.bRun.Location = New System.Drawing.Point(497, 310)
+        Me.bRun.Location = New System.Drawing.Point(493, 302)
         Me.bRun.Name = "bRun"
         Me.bRun.Size = New System.Drawing.Size(75, 23)
         Me.bRun.TabIndex = 0
-        Me.bRun.Text = "Run"
+        Me.bRun.Text = "Generate"
         Me.bRun.UseVisualStyleBackColor = True
         '
         'cbRinexFile
         '
         Me.cbRinexFile.FormattingEnabled = True
-        Me.cbRinexFile.Location = New System.Drawing.Point(170, 15)
+        Me.cbRinexFile.Location = New System.Drawing.Point(166, 10)
         Me.cbRinexFile.Name = "cbRinexFile"
         Me.cbRinexFile.Size = New System.Drawing.Size(121, 21)
         Me.cbRinexFile.TabIndex = 1
@@ -66,7 +80,7 @@ Partial Class GpsSimForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 20)
+        Me.Label1.Location = New System.Drawing.Point(8, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 2
@@ -75,7 +89,7 @@ Partial Class GpsSimForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 48)
+        Me.Label2.Location = New System.Drawing.Point(8, 43)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 13)
         Me.Label2.TabIndex = 4
@@ -85,7 +99,7 @@ Partial Class GpsSimForm
         '
         Me.cbFormat.FormattingEnabled = True
         Me.cbFormat.Items.AddRange(New Object() {"1", "8", "16"})
-        Me.cbFormat.Location = New System.Drawing.Point(170, 43)
+        Me.cbFormat.Location = New System.Drawing.Point(166, 38)
         Me.cbFormat.Name = "cbFormat"
         Me.cbFormat.Size = New System.Drawing.Size(121, 21)
         Me.cbFormat.TabIndex = 3
@@ -94,7 +108,7 @@ Partial Class GpsSimForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 75)
+        Me.Label4.Location = New System.Drawing.Point(8, 70)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(111, 13)
         Me.Label4.TabIndex = 8
@@ -104,7 +118,7 @@ Partial Class GpsSimForm
         '
         Me.cbDuration.FormattingEnabled = True
         Me.cbDuration.Items.AddRange(New Object() {"300"})
-        Me.cbDuration.Location = New System.Drawing.Point(170, 70)
+        Me.cbDuration.Location = New System.Drawing.Point(166, 65)
         Me.cbDuration.Name = "cbDuration"
         Me.cbDuration.Size = New System.Drawing.Size(121, 21)
         Me.cbDuration.TabIndex = 7
@@ -121,96 +135,217 @@ Partial Class GpsSimForm
         Me.tpStaticMode.Location = New System.Drawing.Point(4, 22)
         Me.tpStaticMode.Name = "tpStaticMode"
         Me.tpStaticMode.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpStaticMode.Size = New System.Drawing.Size(549, 178)
+        Me.tpStaticMode.Size = New System.Drawing.Size(553, 178)
         Me.tpStaticMode.TabIndex = 0
         Me.tpStaticMode.Text = "Static Mode (-l)"
         Me.tpStaticMode.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(251, 14)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(38, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Height"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(132, 14)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(54, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Longitude"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(45, 13)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Latitude"
+        '
+        'tbHgt
+        '
+        Me.tbHgt.Location = New System.Drawing.Point(254, 30)
+        Me.tbHgt.Name = "tbHgt"
+        Me.tbHgt.Size = New System.Drawing.Size(100, 20)
+        Me.tbHgt.TabIndex = 0
+        Me.tbHgt.Text = "100"
+        '
+        'tbLon
+        '
+        Me.tbLon.Location = New System.Drawing.Point(135, 30)
+        Me.tbLon.Name = "tbLon"
+        Me.tbLon.Size = New System.Drawing.Size(100, 20)
+        Me.tbLon.TabIndex = 0
+        Me.tbLon.Text = "60.000000"
+        '
+        'tbLat
+        '
+        Me.tbLat.Location = New System.Drawing.Point(15, 30)
+        Me.tbLat.Name = "tbLat"
+        Me.tbLat.Size = New System.Drawing.Size(100, 20)
+        Me.tbLat.TabIndex = 0
+        Me.tbLat.Text = "30.000000"
         '
         'TabControl1
         '
         Me.TabControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.tpStaticMode)
-        Me.TabControl1.Location = New System.Drawing.Point(15, 97)
+        Me.TabControl1.Location = New System.Drawing.Point(11, 92)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(557, 204)
+        Me.TabControl1.Size = New System.Drawing.Size(561, 204)
         Me.TabControl1.TabIndex = 9
-        '
-        'tbLat
-        '
-        Me.tbLat.Location = New System.Drawing.Point(19, 35)
-        Me.tbLat.Name = "tbLat"
-        Me.tbLat.Size = New System.Drawing.Size(100, 20)
-        Me.tbLat.TabIndex = 0
-        Me.tbLat.Text = "30.000000"
-        '
-        'tbLon
-        '
-        Me.tbLon.Location = New System.Drawing.Point(139, 35)
-        Me.tbLon.Name = "tbLon"
-        Me.tbLon.Size = New System.Drawing.Size(100, 20)
-        Me.tbLon.TabIndex = 0
-        Me.tbLon.Text = "60.000000"
-        '
-        'tbHgt
-        '
-        Me.tbHgt.Location = New System.Drawing.Point(258, 35)
-        Me.tbHgt.Name = "tbHgt"
-        Me.tbHgt.Size = New System.Drawing.Size(100, 20)
-        Me.tbHgt.TabIndex = 0
-        Me.tbHgt.Text = "100"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 19)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Latitude"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(136, 19)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(54, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Longitude"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(255, 19)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(38, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Height"
         '
         'cbOutputFile
         '
         Me.cbOutputFile.FormattingEnabled = True
-        Me.cbOutputFile.Location = New System.Drawing.Point(455, 15)
+        Me.cbOutputFile.Location = New System.Drawing.Point(357, 10)
         Me.cbOutputFile.Name = "cbOutputFile"
-        Me.cbOutputFile.Size = New System.Drawing.Size(121, 21)
+        Me.cbOutputFile.Size = New System.Drawing.Size(215, 21)
         Me.cbOutputFile.TabIndex = 1
         Me.cbOutputFile.Text = "gpssim.bin"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(297, 20)
+        Me.Label3.Location = New System.Drawing.Point(293, 15)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Output File"
         '
+        'TabControl2
+        '
+        Me.TabControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TabControl2.Controls.Add(Me.TabPage1)
+        Me.TabControl2.Location = New System.Drawing.Point(11, 331)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(561, 204)
+        Me.TabControl2.TabIndex = 10
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.Label11)
+        Me.TabPage1.Controls.Add(Me.tbHackrfAmp)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.tbHackrfIFGain)
+        Me.TabPage1.Controls.Add(Me.tbHackrfRate)
+        Me.TabPage1.Controls.Add(Me.tbHackrfFreq)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(553, 178)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "HackRF One"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(251, 14)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(59, 13)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "IF Gain, db"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(132, 14)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(87, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "Sample Rate, Hz"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(12, 14)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(76, 13)
+        Me.Label10.TabIndex = 9
+        Me.Label10.Text = "Frequency, Hz"
+        '
+        'tbHackrfIFGain
+        '
+        Me.tbHackrfIFGain.Enabled = False
+        Me.tbHackrfIFGain.Location = New System.Drawing.Point(254, 30)
+        Me.tbHackrfIFGain.Name = "tbHackrfIFGain"
+        Me.tbHackrfIFGain.Size = New System.Drawing.Size(100, 20)
+        Me.tbHackrfIFGain.TabIndex = 0
+        Me.tbHackrfIFGain.Text = "0"
+        '
+        'tbHackrfRate
+        '
+        Me.tbHackrfRate.Enabled = False
+        Me.tbHackrfRate.Location = New System.Drawing.Point(135, 30)
+        Me.tbHackrfRate.Name = "tbHackrfRate"
+        Me.tbHackrfRate.Size = New System.Drawing.Size(100, 20)
+        Me.tbHackrfRate.TabIndex = 0
+        Me.tbHackrfRate.Text = "2600000"
+        '
+        'tbHackrfFreq
+        '
+        Me.tbHackrfFreq.Enabled = False
+        Me.tbHackrfFreq.Location = New System.Drawing.Point(15, 30)
+        Me.tbHackrfFreq.Name = "tbHackrfFreq"
+        Me.tbHackrfFreq.Size = New System.Drawing.Size(100, 20)
+        Me.tbHackrfFreq.TabIndex = 0
+        Me.tbHackrfFreq.Text = "1575420000"
+        '
+        'bTransmit
+        '
+        Me.bTransmit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.bTransmit.Location = New System.Drawing.Point(492, 541)
+        Me.bTransmit.Name = "bTransmit"
+        Me.bTransmit.Size = New System.Drawing.Size(75, 23)
+        Me.bTransmit.TabIndex = 11
+        Me.bTransmit.Text = "Transmit"
+        Me.bTransmit.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(371, 14)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(100, 13)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "RX/TX RF Amplifier"
+        '
+        'tbHackrfAmp
+        '
+        Me.tbHackrfAmp.Enabled = False
+        Me.tbHackrfAmp.Location = New System.Drawing.Point(374, 30)
+        Me.tbHackrfAmp.Name = "tbHackrfAmp"
+        Me.tbHackrfAmp.Size = New System.Drawing.Size(100, 20)
+        Me.tbHackrfAmp.TabIndex = 12
+        Me.tbHackrfAmp.Text = "0"
+        '
+        'pbTransmit
+        '
+        Me.pbTransmit.Location = New System.Drawing.Point(15, 541)
+        Me.pbTransmit.Name = "pbTransmit"
+        Me.pbTransmit.Size = New System.Drawing.Size(471, 23)
+        Me.pbTransmit.TabIndex = 12
+        '
         'GpsSimForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 345)
+        Me.ClientSize = New System.Drawing.Size(579, 573)
+        Me.Controls.Add(Me.pbTransmit)
+        Me.Controls.Add(Me.bTransmit)
+        Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbDuration)
@@ -229,6 +364,9 @@ Partial Class GpsSimForm
         Me.tpStaticMode.ResumeLayout(False)
         Me.tpStaticMode.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -251,4 +389,16 @@ Partial Class GpsSimForm
     Friend WithEvents tbLat As TextBox
     Friend WithEvents cbOutputFile As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents tbHackrfIFGain As TextBox
+    Friend WithEvents tbHackrfRate As TextBox
+    Friend WithEvents tbHackrfFreq As TextBox
+    Friend WithEvents bTransmit As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents tbHackrfAmp As TextBox
+    Friend WithEvents pbTransmit As ProgressBar
 End Class
